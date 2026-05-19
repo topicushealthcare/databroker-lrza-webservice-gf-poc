@@ -1,0 +1,32 @@
+meta {
+  name: 7 - Create Test HealthcareService
+  type: http
+  seq: 8
+}
+
+post {
+  url: http://localhost:8080/HealthcareService
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "<name-of-HealthcareService>",
+    "serviceIdentifier": "<id-of-HealthcareService>",
+    "zorgaanbiederId": "<fhir-ref-to-healthcare-organization>",
+    "type": {
+      "system": "http://istandaarden.nl/ibieb/codelijsten/COD163",
+      "code": "<code-from-list>"
+    },
+    "specialty": {
+      "system": "http://istandaarden.nl/ibieb/codelijsten/COD016-VEKT",
+      "code": "<code-from-list>"
+    }
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

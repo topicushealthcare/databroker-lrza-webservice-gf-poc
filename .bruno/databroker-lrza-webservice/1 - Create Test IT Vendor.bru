@@ -1,0 +1,23 @@
+meta {
+  name: 1 - Create Test IT Vendor
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/Organization/create-it-vendor
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "<name-of-vendor>",
+    "kvk": "<kvk-number>"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

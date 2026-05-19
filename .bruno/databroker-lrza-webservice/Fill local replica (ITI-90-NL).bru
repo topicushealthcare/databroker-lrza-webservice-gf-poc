@@ -1,0 +1,20 @@
+meta {
+  name: Fill local replica (ITI-90-NL)
+  type: http
+  seq: 10
+}
+
+get {
+  url: http://localhost:8080/periodic-sync?since=2026-04-03T07:59:00Z
+  body: none
+  auth: inherit
+}
+
+params:query {
+  since: 2026-04-03T07:59:00Z
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

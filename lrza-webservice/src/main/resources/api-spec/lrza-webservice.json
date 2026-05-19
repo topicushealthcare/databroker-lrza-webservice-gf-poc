@@ -1,0 +1,498 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0",
+    "title": "lrza-webservice"
+  },
+  "paths": {
+    "/Organization": {
+      "post": {
+        "tags": [
+          "administration"
+        ],
+        "summary": "Your POST endpoint",
+        "operationId": "post-Organization",
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "ura": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "ura",
+                  "type"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "administration"
+        ],
+        "summary": "Your PUT endpoint",
+        "operationId": "put-Organization",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "zorgaanbiederId": {
+                    "type": "string"
+                  },
+                  "endpointId": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "zorgaanbiederId",
+                  "endpointId"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Organization/create-it-vendor": {
+      "post": {
+        "tags": [
+          "administration"
+        ],
+        "summary": "Your POST endpoint",
+        "operationId": "post-Organization-create-it-vendor",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "kvk": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "kvk"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/OrganizationAffiliation": {
+      "post": {
+        "tags": [
+          "administration"
+        ],
+        "summary": "Your POST endpoint",
+        "operationId": "post-OrganizationAffiliation",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "vendorId": {
+                    "type": "string"
+                  },
+                  "zorgaanbiederId": {
+                    "type": "string"
+                  },
+                  "affiliationIdentifier": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "vendorId",
+                  "zorgaanbiederId",
+                  "affiliationIdentifier"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Application": {
+      "post": {
+        "tags": [
+          "administration"
+        ],
+        "summary": "Your POST endpoint",
+        "operationId": "post-Application",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "applicationIdentifier": {
+                    "type": "string"
+                  },
+                  "applicationName": {
+                    "type": "string"
+                  },
+                  "vendorId": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "applicationIdentifier",
+                  "applicationName",
+                  "vendorId"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Endpoint": {
+      "post": {
+        "tags": [
+          "administration"
+        ],
+        "summary": "Your POST endpoint",
+        "operationId": "post-Endpoint",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "endpointIdentifier": {
+                    "type": "string"
+                  },
+                  "endpointName": {
+                    "type": "string"
+                  },
+                  "addressUrl": {
+                    "type": "string"
+                  },
+                  "vendorId": {
+                    "type": "string"
+                  },
+                  "connectionType": {
+                    "$ref": "#/components/schemas/Coding"
+                  },
+                  "payloadType": {
+                    "$ref": "#/components/schemas/Coding"
+                  }
+                },
+                "required": [
+                  "endpointIdentifier",
+                  "endpointName",
+                  "addressUrl",
+                  "vendorId",
+                  "connectionType",
+                  "payloadType"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/initial-sync": {
+      "get": {
+        "tags": [
+          "synchronization"
+        ],
+        "summary": "Your GET endpoint",
+        "operationId": "get-initial-sync",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/periodic-sync": {
+      "get": {
+        "tags": [
+          "synchronization"
+        ],
+        "summary": "Your GET endpoint",
+        "operationId": "get-periodic-sync",
+        "parameters": [
+          {
+            "name": "since",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/HealthcareService": {
+      "post": {
+        "tags": [
+          "administration"
+        ],
+        "summary": "Your POST endpoint",
+        "operationId": "post-HealthcareService",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "serviceIdentifier": {
+                    "type": "string"
+                  },
+                  "zorgaanbiederId": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "$ref": "#/components/schemas/Coding"
+                  },
+                  "specialty": {
+                    "$ref": "#/components/schemas/Coding"
+                  }
+                },
+                "required": [
+                  "name",
+                  "serviceIdentifier",
+                  "zorgaanbiederId",
+                  "type"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "administration"
+        ],
+        "summary": "Your PUT endpoint",
+        "operationId": "put-HealthcareService",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "serviceId": {
+                    "type": "string"
+                  },
+                  "endpointId": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "serviceId",
+                  "endpointId"
+                ]
+              },
+              "examples": {
+                "Example 1": {
+                  "value": {
+                    "serviceId": "string",
+                    "endpointId": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "administration"
+    },
+    {
+      "name": "synchronization"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "Coding": {
+        "type": "object",
+        "title": "Coding",
+        "properties": {
+          "system": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "system",
+          "code"
+        ]
+      }
+    }
+  }
+}

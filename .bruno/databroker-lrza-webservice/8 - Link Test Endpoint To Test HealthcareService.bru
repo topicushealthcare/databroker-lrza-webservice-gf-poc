@@ -1,0 +1,23 @@
+meta {
+  name: 8 - Link Test Endpoint To Test HealthcareService
+  type: http
+  seq: 9
+}
+
+put {
+  url: http://localhost:8080/HealthcareService
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "serviceId": "<fhir-ref-to-HealthCareService>",
+    "endpointId": "<fhir-ref-to-endpoint>"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

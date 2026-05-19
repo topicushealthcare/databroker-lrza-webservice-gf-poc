@@ -1,0 +1,24 @@
+meta {
+  name: 4 - Create Test Application
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:8080/Application
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "applicationIdentifier": "urn:uuid:{{$randomUUID}}",
+    "applicationName": "<name-of-device>",
+    "vendorId": "<fhir-ref-to-it-vendor>"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

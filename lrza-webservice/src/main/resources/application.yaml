@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: lrza-webservice
+
+server:
+  port: 8080
+management:
+  server:
+    port: 8081
+
+application:
+  local-replica:
+    base-url: http://localhost:7050/fhir
+  lrza:
+    base-url: https://adressering.proeftuin.gf.irealisatie.nl/poc/FHIR/fhir
+  mtls:
+    keystore-file: classpath:mtls/fill-with-pfx-keystore
+    keystore-password: <-fill-with-password->

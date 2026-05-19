@@ -1,0 +1,24 @@
+meta {
+  name: 3 - Create Test OrganizationAffiliation
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:8080/OrganizationAffiliation
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+   "vendorId": "<fhir-ref-to-it-vendor>",
+    "zorgaanbiederId": "<fhir-ref-to-healthcare-organization>",
+    "affiliationIdentifier": "{{$randomUUID}}"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

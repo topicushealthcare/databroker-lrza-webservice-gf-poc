@@ -1,0 +1,23 @@
+meta {
+  name: 6 - Link Test Endpoint to Test Organization
+  type: http
+  seq: 7
+}
+
+put {
+  url: http://localhost:8080/Organization
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "zorgaanbiederId": "<fhir-ref-to-healthcare-organization>",
+    "endpointId": "<fhir-ref-to-endpoint>"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

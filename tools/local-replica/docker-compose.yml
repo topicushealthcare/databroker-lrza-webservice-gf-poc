@@ -1,0 +1,22 @@
+services:
+  lrza-local-replica:
+    image: "hapiproject/hapi:latest"
+    container_name: lrza-local-replica
+    ports:
+      - "7050:7050"
+    environment:
+      hapi.fhir.server_address: http://localhost:7050/fhir
+      hapi.fhir.version: R4
+      server.tomcat.relaxed-query-chars: "|"
+      server.port: 7050
+      hapi.fhir.allow_cascading_deletes: true
+      hapi.fhir.server_id_strategy: UUID
+      hapi.fhir.client_id_strategy: ANY
+      hapi.fhir.store_meta_source_information: SOURCE_URI
+      hapi.fhir.enforce_referential_integrity_on_write: false
+
+      hapi.fhir.tester.home.name: Local replica
+      hapi.fhir.tester.home.server_address: http://localhost:7050/fhir
+      hapi.fhir.tester.home.refuse_to_fetch_third_party_urls: false
+      hapi.fhir.tester.home.fhir_version: R4
+      hapi.fhir.partitioning.enabled: false

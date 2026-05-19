@@ -1,0 +1,16 @@
+meta {
+  name: Synchronize local-replica with LRZa history (ITI-91-NL)
+  type: http
+  seq: 11
+}
+
+get {
+  url: http://localhost:8080/initial-sync
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
